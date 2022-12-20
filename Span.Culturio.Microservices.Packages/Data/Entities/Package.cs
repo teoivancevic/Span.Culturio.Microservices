@@ -33,6 +33,22 @@ namespace Span.Culturio.Microservices.Packages.Data.Entities
                 .WithOne(b => b.Package)
                 .HasForeignKey(x => x.PackageId);
             */
+
+            builder.HasData(new Package
+            {
+                Id = 1,
+                Name = "Muzeji",
+                ValidDays = 15
+                
+            });
+
+            builder.HasData(new Package
+            {
+                Id = 2,
+                Name = "Kino",
+                ValidDays = 30
+
+            });
         }
     }
 }

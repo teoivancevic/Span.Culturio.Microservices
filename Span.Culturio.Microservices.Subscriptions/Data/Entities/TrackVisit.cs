@@ -26,6 +26,8 @@ namespace Span.Culturio.Microservices.Subscriptions.Data.Entities
             builder.Property(x => x.TimeEntered)
                 .IsRequired();
 
+            //seed data namjerno nisam stavio
+
         }
     }
 }

@@ -36,6 +36,33 @@ namespace Span.Culturio.Microservices.Subscriptions.Data.Entities
                 .IsRequired();
             builder.Property(x => x.RecordedVisits)
                 .IsRequired();
+
+
+            //seed
+
+            builder.HasData(new Subscription
+            {
+                Id = 1,
+                UserId = 1,
+                PackageId = 1,
+                Name = "sub package 1",
+                ActiveFrom = DateTime.Now, // placeholder jer nije active
+                ActiveTo = DateTime.Now,    // placeholder jer nije active
+                State = "not active",
+                RecordedVisits = 0
+            });
+
+            builder.HasData(new Subscription
+            {
+                Id = 2,
+                UserId = 1,
+                PackageId = 2,
+                Name = "sub package 2",
+                ActiveFrom = DateTime.Now,  // placeholder jer nije active
+                ActiveTo = DateTime.Now,    // placeholder jer nije active
+                State = "not active",
+                RecordedVisits = 0
+            });
         }
     }
 }

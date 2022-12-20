@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -34,6 +35,41 @@ namespace Span.Culturio.Microservices.CultureObjects.Data.Entities
                 .IsRequired();
             builder.Property(x => x.AdminUserId)
                 .IsRequired();
+
+
+            //seed
+            builder.HasData(new CultureObject
+            {
+                Id = 1,
+                Name = "Mimara",
+                ContactEmail = "mimara@mimara.hr",
+                ZipCode = 10000,
+                Address = "centar grada",
+                City = "Zagreb",
+                AdminUserId = 1
+            });
+
+            builder.HasData(new CultureObject
+            {
+                Id = 2,
+                Name = "Kino Branimir",
+                ContactEmail = "branimir@blitz.hr",
+                ZipCode = 10000,
+                Address = "branimir centar",
+                City = "Zagreb",
+                AdminUserId = 1
+            });
+
+            builder.HasData(new CultureObject
+            {
+                Id = 3,
+                Name = "Kino Arena centar",
+                ContactEmail = "arenacentar@blitz.hr",
+                ZipCode = 10000,
+                Address = "Arena centar",
+                City = "Zagreb",
+                AdminUserId = 1
+            });
         }
     }
 }

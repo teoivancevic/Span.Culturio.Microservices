@@ -36,6 +36,8 @@ namespace Span.Culturio.Auth.Data.Entities
             builder.Property(x => x.PasswordSalt)
                 .IsRequired();
 
+
+            /*
             // Seed data
             UserHelper.CreatePasswordHash("Str0ngP@$$w0rd12$%#", out byte[] passwordHash, out byte[] passwordSalt);
             builder.HasData(new User
@@ -48,6 +50,7 @@ namespace Span.Culturio.Auth.Data.Entities
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt
             });
+            */
         }
     }
 }

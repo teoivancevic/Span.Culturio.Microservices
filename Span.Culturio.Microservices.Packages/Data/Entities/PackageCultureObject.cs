@@ -39,6 +39,34 @@ namespace Span.Culturio.Microservices.Packages.Data.Entities
             builder.Property(x => x.AvailableVisits)
                 .IsRequired();
 
+            //seed
+            builder.HasData(new PackageCultureObject
+            {
+                Id = 1,
+                CultureObjectId = 1,
+                PackageId = 1,
+                AvailableVisits = 3
+
+            }) ;
+
+            builder.HasData(new PackageCultureObject
+            {
+                Id = 2,
+                CultureObjectId = 2,
+                PackageId = 2,
+                AvailableVisits = 5
+
+            });
+
+            builder.HasData(new PackageCultureObject
+            {
+                Id = 3,
+                CultureObjectId = 3,
+                PackageId = 2,
+                AvailableVisits = 2
+
+            });
+
         }
     }
 }
