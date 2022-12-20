@@ -1,0 +1,102 @@
+version: '3.4'
+
+
+networks:
+  backend: #private
+  frontend: #public
+
+services:
+
+  culturio-auth:
+    image: culturio.auth
+    build:
+      context: .
+      dockerfile: Span.Culturio.Auth/Dockerfile
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ASPNETCORE_URLS=http://+:80"
+      - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Users;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
+    ports:
+      - "5001:80"
+    networks:
+      - backend
+      - frontend
+
+  culturio-users:
+    image: culturio.users
+    build:
+      context: .
+      dockerfile: Span.Culturio.Microservices.Users/Dockerfile
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ASPNETCORE_URLS=http://+:80"
+      - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Users;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
+    ports:
+      - "5002:80"
+    networks:
+      - backend
+      - frontend
+
+
+  culturio-cultureobjects:
+    image: culturio.cultureobjects
+    build:
+      context: .
+      dockerfile: Span.Culturio.Microservices.CultureObjects/Dockerfile
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ASPNETCORE_URLS=http://+:80"
+      - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.CultureObjects;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
+    ports:
+      - "5003:80"
+    networks:
+      - backend
+      - frontend
+
+  
+
+
+  culturio-subscriptions:
+    image: culturio.subscriptions
+    build:
+      context: .
+      dockerfile: Span.Culturio.Microservices.Subscriptions/Dockerfile
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ASPNETCORE_URLS=http://+:80"
+      - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Subscriptions;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
+      - "Endpoints__Packages=http://culturio-packages/api/packages/"
+    ports:
+      - "5004:80"
+    networks:
+      - backend
+      - frontend
+
+
+  culturio-packages:
+    image: culturio.packages
+    build:
+      context: .
+      dockerfile: Span.Culturio.Microservices.Packages/Dockerfile
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ASPNETCORE_URLS=http://+:80"
+      - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Packages;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
+    ports:
+      - "5005:80"
+    networks:
+      - backend
+      - frontend
+
+#  seq:
+#   image: datalust/seq:latest
+#   environment:
+#    - ACCEPT_EULA=y
+#   ports:
+#    - "5341:80"
+#   networks:
+#    - backend
+#    - frontend
+
+
+

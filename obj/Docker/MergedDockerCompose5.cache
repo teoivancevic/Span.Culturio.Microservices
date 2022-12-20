@@ -1,0 +1,98 @@
+name: dockercompose17091314513400019701
+services:
+  culturio-auth:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Auth/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Users;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+    image: culturio.auth
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5001"
+      protocol: tcp
+  culturio-cultureobjects:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.CultureObjects/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.CultureObjects;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+    image: culturio.cultureobjects
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5003"
+      protocol: tcp
+  culturio-packages:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.Packages/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Packages;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+    image: culturio.packages
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5005"
+      protocol: tcp
+  culturio-subscriptions:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.Subscriptions/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Subscriptions;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+      Endpoints__Packages: http://culturio-packages/api/packages/
+    image: culturio.subscriptions
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5004"
+      protocol: tcp
+  culturio-users:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.Users/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Users;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+    image: culturio.users
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5002"
+      protocol: tcp
+networks:
+  backend:
+    name: dockercompose17091314513400019701_backend
+  frontend:
+    name: dockercompose17091314513400019701_frontend

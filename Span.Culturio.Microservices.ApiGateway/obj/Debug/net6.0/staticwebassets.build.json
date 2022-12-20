@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "d0Y5yGhcHmqe8CqBROijsOdLw/wrAjAFf9MQ3/KD5wI=",
+  "Source": "Span.Culturio.Microservices.ApiGateway",
+  "BasePath": "_content/Span.Culturio.Microservices.ApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

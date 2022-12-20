@@ -1,0 +1,22 @@
+﻿{
+  "Routes": [
+    // users
+    {
+      // http://localhost:5002/users/users/12
+      // http://culturio-users/api/users/12
+      "UpstreamPathTemplate": "/users/{everything}",
+      "UpstreamHttpMethod": ["Get", "Post" ],
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "culturio-users",
+          "Port": 80
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl":  "http://localhost:5002"
+  }
+}
