@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "X0R4YWxcz5YxWbNAQiXPrcLTuhgZCq4LE4gZfm89qBE=",
+  "Source": "Span.Culturio.Microservices.Users",
+  "BasePath": "_content/Span.Culturio.Microservices.Users",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

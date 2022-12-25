@@ -1,0 +1,82 @@
+﻿{
+  "Routes": [
+    // users
+    {
+      // http://localhost:5002/users/users/12 // saljemo na api gateway
+      // http://culturio-users/api/users/12   // radi isto kao ovo dosad
+      "UpstreamPathTemplate": "/users/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "culturio-users",
+          "Port": 80
+        }
+      ]
+    },
+    // auth
+    {
+      // http://localhost:5002/auth/auth/12 // saljemo na api gateway
+      // http://culturio-users/api/auth/12   // radi isto kao ovo dosad
+      "UpstreamPathTemplate": "/auth/{everything}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "culturio-auth",
+          "Port": 80
+        }
+      ]
+    },
+    // subscriptions
+    {
+      // http://localhost:5002/subscriptions/subscriptions/12 // saljemo na api gateway
+      // http://culturio-users/api/subscriptions/12   // radi isto kao ovo dosad
+      "UpstreamPathTemplate": "/subscriptions/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "culturio-subscriptions",
+          "Port": 80
+        }
+      ]
+    },
+    // packages
+    {
+      // http://localhost:5002/packages/packages/12 // saljemo na api gateway
+      // http://culturio-users/api/packages/12   // radi isto kao ovo dosad
+      "UpstreamPathTemplate": "/packages/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "culturio-packages",
+          "Port": 80
+        }
+      ]
+    },
+    // cultureobjects
+    {
+      // http://localhost:5002/cultureobjects/cultureobjects/12 // saljemo na api gateway
+      // http://culturio-users/api/cultureobjects/12   // radi isto kao ovo dosad
+      "UpstreamPathTemplate": "/cultureobjects/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "culturio-cultureobjects",
+          "Port": 80
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl":  "http://localhost:5002"
+  }
+}

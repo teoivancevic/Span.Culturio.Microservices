@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "egh9tplCK1TK4kSbET6a5bVUoeFa6PSFNS9jL2TLHYQ=",
+  "Source": "Span.Culturio.Microservices.Subscriptions",
+  "BasePath": "_content/Span.Culturio.Microservices.Subscriptions",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

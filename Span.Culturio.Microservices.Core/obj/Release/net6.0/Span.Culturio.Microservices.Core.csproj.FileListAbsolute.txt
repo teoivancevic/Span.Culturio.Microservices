@@ -1,0 +1,14 @@
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/bin/Release/net6.0/Span.Culturio.Microservices.Core.deps.json
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/bin/Release/net6.0/Span.Culturio.Microservices.Core.runtimeconfig.json
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/bin/Release/net6.0/Span.Culturio.Microservices.Core.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/bin/Release/net6.0/Span.Culturio.Microservices.Core.pdb
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.csproj.AssemblyReference.cache
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.AssemblyInfoInputs.cache
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.AssemblyInfo.cs
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.csproj.CoreCompileInputs.cache
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/refint/Span.Culturio.Microservices.Core.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.pdb
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/Span.Culturio.Microservices.Core.genruntimeconfig.cache
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Core/obj/Release/net6.0/ref/Span.Culturio.Microservices.Core.dll
