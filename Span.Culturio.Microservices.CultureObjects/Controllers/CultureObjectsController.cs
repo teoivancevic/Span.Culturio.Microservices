@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Span.Culturio.Microservices.CultureObjects.Models;
+using Span.Culturio.Microservices.Core.Models;
 using Span.Culturio.Microservices.CultureObjects.Services;
 
 namespace Span.Culturio.Microservices.CultureObjects.Controllers

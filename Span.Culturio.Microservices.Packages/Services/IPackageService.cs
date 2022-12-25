@@ -1,6 +1,6 @@
 ﻿using System;
 using Span.Culturio.Microservices.Packages.Data.Entities;
-using Span.Culturio.Microservices.Packages.Models;
+using Span.Culturio.Microservices.Core.Models;
 
 namespace Span.Culturio.Microservices.Packages.Services
 {

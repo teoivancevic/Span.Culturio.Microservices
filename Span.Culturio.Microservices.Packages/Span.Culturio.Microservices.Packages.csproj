@@ -14,7 +14,6 @@
     <None Remove="Data\" />
     <None Remove="Data\Entities\" />
     <None Remove="Profiles\" />
-    <None Remove="Models\" />
     <None Remove="Migrations\" />
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
@@ -27,7 +26,6 @@
     <Folder Include="Data\" />
     <Folder Include="Data\Entities\" />
     <Folder Include="Profiles\" />
-    <Folder Include="Models\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using Span.Culturio.Auth.Data.Entities;
-using Span.Culturio.Auth.Models;
+using Span.Culturio.Microservices.Core.Models;
 
 namespace Span.Culturio.Auth.Profiles
 {

@@ -1,15 +1,28 @@
 ﻿<Properties StartupConfiguration="{CABE5039-BA07-4B8E-9BFC-7C080D3F0F3E}|Default">
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
+      <Items>
+        <StartupItem ItemId="{48C1DC0A-C534-412D-BDD0-324B0DFF9919}" ItemName="Span.Culturio.Auth" ConfigurationId="Default" />
+        <StartupItem ItemId="{8134236A-01DE-4769-86A3-FA8A3239EA2E}" ItemName="Span.Culturio.Microservices.CultureObjects" ConfigurationId="Default" />
+        <StartupItem ItemId="{6A02297D-50FA-45DE-88BD-DD5C406531FD}" ItemName="Span.Culturio.Microservices.Packages" ConfigurationId="Default" />
+        <StartupItem ItemId="{CABE5039-BA07-4B8E-9BFC-7C080D3F0F3E}" ItemName="Span.Culturio.Microservices.Subscriptions" ConfigurationId="Default" />
+        <StartupItem ItemId="{00EDC00D-5E57-4DA1-8192-F79FEACC67E2}" ItemName="Span.Culturio.Microservices.Users" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Services.Span.Culturio.Microservices.CultureObjects PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Services.Span.Culturio.Auth PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Span.Culturio.Microservices.Subscriptions/Services/SubscriptionService.cs">
+  <MonoDevelop.Ide.ItemProperties.Clients.Span.Culturio.Ui PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Span.Culturio.Microservices.Users/Controllers/UsersController.cs">
     <Files>
-      <File FileName="Span.Culturio.Microservices.Users/Program.cs" Line="26" Column="1" />
-      <File FileName="Span.Culturio.Microservices.Core/StartupHelpers.cs" Line="53" Column="15" />
+      <File FileName="Span.Culturio.Microservices.Users/Program.cs" />
+      <File FileName="Span.Culturio.Microservices.Core/StartupHelpers.cs" />
       <File FileName="Span.Culturio.Microservices.Users/Data/DataContext.cs" />
-      <File FileName="Span.Culturio.Microservices.Users/Data/Entities/User.cs" Line="43" Column="24" />
+      <File FileName="Span.Culturio.Microservices.Users/Data/Entities/User.cs" />
       <File FileName="Span.Culturio.Microservices.Users/Helpers/UserHelper.cs" />
       <File FileName="Span.Culturio.Microservices.Users/appsettings.json" />
       <File FileName="Span.Culturio.Microservices.Users/Migrations/20221219005627_Initial.cs" />
@@ -21,10 +34,10 @@
       <File FileName="Span.Culturio.Microservices.Users/Models/LoginDto.cs" />
       <File FileName="Span.Culturio.Microservices.Users/Profiles/UserProfile.cs" />
       <File FileName="Span.Culturio.Microservices.CultureObjects/appsettings.json" />
-      <File FileName="Span.Culturio.Microservices.CultureObjects/Program.cs" Line="28" Column="1" />
+      <File FileName="Span.Culturio.Microservices.CultureObjects/Program.cs" />
       <File FileName="Span.Culturio.Microservices.CultureObjects/Data/DataContext.cs" />
       <File FileName="Span.Culturio.Microservices.CultureObjects/Data/Entities/CultureObject.cs" />
-      <File FileName="Span.Culturio.Microservices.CultureObjects/Controllers/CultureObjectsController.cs" />
+      <File FileName="Span.Culturio.Microservices.CultureObjects/Controllers/CultureObjectsController.cs" Line="1" Column="1" />
       <File FileName="Span.Culturio.Microservices.CultureObjects/Services/ICultureObjectService.cs" />
       <File FileName="Span.Culturio.Microservices.CultureObjects/Services/CultureObjectService.cs" />
       <File FileName="Span.Culturio.Microservices.CultureObjects/Models/CultureObjectDto.cs" />
@@ -32,21 +45,21 @@
       <File FileName="Span.Culturio.Microservices.CultureObjects/Profiles/CultureObjectProfile.cs" />
       <File FileName="Span.Culturio.Microservices.CultureObjects/Migrations/20221219133623_Initial.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/appsettings.json" />
-      <File FileName="Span.Culturio.Microservices.Subscriptions/Program.cs" Line="27" Column="1" />
-      <File FileName="Span.Culturio.Microservices.Subscriptions/Services/ISubscriptionService.cs" Line="13" Column="6" />
-      <File FileName="Span.Culturio.Microservices.Subscriptions/Services/SubscriptionService.cs" Line="88" Column="1" />
+      <File FileName="Span.Culturio.Microservices.Subscriptions/Program.cs" />
+      <File FileName="Span.Culturio.Microservices.Subscriptions/Services/ISubscriptionService.cs" Line="11" Column="88" />
+      <File FileName="Span.Culturio.Microservices.Subscriptions/Services/SubscriptionService.cs" Line="116" Column="91" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Models/SubscriptionDto.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Models/CreateSubscriptionDto.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Models/ActivateSubscriptionDto.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Data/DataContext.cs" />
-      <File FileName="Span.Culturio.Microservices.Subscriptions/Data/Entities/Subscription.cs" Line="1" Column="1" />
+      <File FileName="Span.Culturio.Microservices.Subscriptions/Data/Entities/Subscription.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Profiles/SubscriptionProfile.cs" />
-      <File FileName="Span.Culturio.Microservices.Subscriptions/Controllers/SubscriptionsController.cs" Line="52" Column="99" />
+      <File FileName="Span.Culturio.Microservices.Subscriptions/Controllers/SubscriptionsController.cs" Line="61" Column="1" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Migrations/20221219154544_Initial.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Profiles/PackageProfile.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Models/PackageDto.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Models/CreatePackageDto.cs" />
-      <File FileName="Span.Culturio.Microservices.Packages/Program.cs" Line="29" Column="1" />
+      <File FileName="Span.Culturio.Microservices.Packages/Program.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Data/DataContext.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Data/Entities/Package.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Services/IPackageService.cs" />
@@ -56,7 +69,7 @@
       <File FileName="Span.Culturio.Microservices.Packages/Models/CreatePackageCultureObjectDto.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Models/PackageCultureObjectDto.cs" />
       <File FileName="Span.Culturio.Microservices.Packages/Data/Entities/PackageCultureObject.cs" />
-      <File FileName="Span.Culturio.Microservices.Packages/Controllers/PackagesController.cs" />
+      <File FileName="Span.Culturio.Microservices.Packages/Controllers/PackagesController.cs" Line="1" Column="1" />
       <File FileName="Span.Culturio.Microservices.Packages/Migrations/20221219162519_Initial.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Data/Entities/TrackVisit.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Models/CreateTrackVisitDto.cs" />
@@ -65,9 +78,9 @@
       <File FileName="Span.Culturio.Microservices.Users/Dockerfile" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Dockerfile" />
       <File FileName="Span.Culturio.Microservices.Packages/Dockerfile" />
-      <File FileName="docker-compose.yml" Line="71" Column="75" />
+      <File FileName="docker-compose.yml" />
       <File FileName="Span.Culturio.Auth/Dockerfile" />
-      <File FileName="Span.Culturio.Auth/Program.cs" Line="24" Column="1" />
+      <File FileName="Span.Culturio.Auth/Program.cs" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Models/TrackVisitDto.cs" />
       <File FileName="Span.Culturio.Microservices.Users/Span.Culturio.Microservices.Users.csproj" />
       <File FileName="Span.Culturio.Microservices.Subscriptions/Migrations/DataContextModelSnapshot.cs" />
@@ -94,11 +107,11 @@
       <File FileName="../Span.Culturio.Ui2/Program.cs" />
       <File FileName="../Span.Culturio.Ui2/Areas/Identity/Pages/Account/LogOut.cshtml" />
       <File FileName="../Span.Culturio.Ui/Shared/Login.razor" />
-      <File FileName="Span.Culturio.Auth/Controllers/AuthController.cs" />
+      <File FileName="Span.Culturio.Auth/Controllers/AuthController.cs" Line="22" Column="53" />
       <File FileName="Span.Culturio.ApiGateway/Dockerfile" />
-      <File FileName="Span.Culturio.ApiGateway/Program.cs" Line="1" Column="1" />
-      <File FileName="Span.Culturio.ApiGateway/ocelot.json" Line="1" Column="1" />
-      <File FileName="Span.Culturio.Microservices.Core/Helpers/CorrelationIdHeaderHandler.cs" Line="10" Column="84" />
+      <File FileName="Span.Culturio.ApiGateway/Program.cs" />
+      <File FileName="Span.Culturio.ApiGateway/ocelot.json" />
+      <File FileName="Span.Culturio.Microservices.Core/Helpers/CorrelationIdHeaderHandler.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -112,8 +125,12 @@
               <Node name="Span.Culturio.Auth" expanded="True">
                 <Node name="Controllers" expanded="True" />
               </Node>
-              <Node name="Span.Culturio.Microservices.CultureObjects" expanded="True" />
-              <Node name="Span.Culturio.Microservices.Packages" expanded="True" />
+              <Node name="Span.Culturio.Microservices.CultureObjects" expanded="True">
+                <Node name="Controllers" expanded="True" />
+              </Node>
+              <Node name="Span.Culturio.Microservices.Packages" expanded="True">
+                <Node name="Controllers" expanded="True" />
+              </Node>
               <Node name="Span.Culturio.Microservices.Subscriptions" expanded="True">
                 <Node name="Controllers" expanded="True" />
                 <Node name="Data" expanded="True">
@@ -128,34 +145,17 @@
                 </Node>
               </Node>
             </Node>
-            <Node name="Shared" expanded="True">
-              <Node name="Span.Culturio.Microservices.Core" expanded="True">
-                <Node name="Helpers" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="Shared" expanded="True" />
             <Node name="docker-compose" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Clients.Span.Culturio.Ui2 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.ItemProperties.Services.Span.Culturio.Microservices.Packages PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.Services.Span.Culturio.Microservices.Subscriptions PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.Clients.Span.Culturio.Ui PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.Services.Span.Culturio.Microservices.Users PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
-      <Items>
-        <StartupItem ItemId="{48C1DC0A-C534-412D-BDD0-324B0DFF9919}" ItemName="Span.Culturio.Auth" ConfigurationId="Default" />
-        <StartupItem ItemId="{8134236A-01DE-4769-86A3-FA8A3239EA2E}" ItemName="Span.Culturio.Microservices.CultureObjects" ConfigurationId="Default" />
-        <StartupItem ItemId="{6A02297D-50FA-45DE-88BD-DD5C406531FD}" ItemName="Span.Culturio.Microservices.Packages" ConfigurationId="Default" />
-        <StartupItem ItemId="{CABE5039-BA07-4B8E-9BFC-7C080D3F0F3E}" ItemName="Span.Culturio.Microservices.Subscriptions" ConfigurationId="Default" />
-        <StartupItem ItemId="{00EDC00D-5E57-4DA1-8192-F79FEACC67E2}" ItemName="Span.Culturio.Microservices.Users" ConfigurationId="Default" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.ItemProperties.Clients.Span.Culturio.Ui2 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.Services.Span.Culturio.Microservices.Packages PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Services.Span.Culturio.Auth PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

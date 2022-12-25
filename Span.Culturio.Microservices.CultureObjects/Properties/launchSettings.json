@@ -12,7 +12,7 @@
     "Span.Culturio.Microservices.CultureObjects": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:37062",
+      "applicationUrl": "http://localhost:46435",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

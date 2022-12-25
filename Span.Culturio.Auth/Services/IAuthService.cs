@@ -1,5 +1,5 @@
 ﻿using System;
-using Span.Culturio.Auth.Models;
+using Span.Culturio.Microservices.Core.Models;
 
 namespace Span.Culturio.Auth.Services
 {

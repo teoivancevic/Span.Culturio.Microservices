@@ -5,7 +5,7 @@ using System.Net.Http;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Span.Culturio.Microservices.Subscriptions.Data;
-using Span.Culturio.Microservices.Subscriptions.Models;
+using Span.Culturio.Microservices.Core.Models;
 using Microsoft.Net.Http.Headers;
 using Microsoft.Extensions.Configuration;
 

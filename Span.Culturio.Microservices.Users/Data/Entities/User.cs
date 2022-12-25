@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Span.Culturio.Microservices.Users.Helpers;
+using Span.Culturio.Microservices.Core.Helpers;
 
 namespace Span.Culturio.Microservices.Users.Data.Entities
 {

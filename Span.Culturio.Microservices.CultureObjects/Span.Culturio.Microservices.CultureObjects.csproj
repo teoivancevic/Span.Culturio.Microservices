@@ -22,7 +22,6 @@
     <None Remove="Data\" />
     <None Remove="Data\Entities\" />
     <None Remove="Controllers\" />
-    <None Remove="Models\" />
     <None Remove="Profiles\" />
     <None Remove="Services\" />
     <None Remove="Migrations\" />
@@ -43,7 +42,6 @@
     <Folder Include="Data\" />
     <Folder Include="Data\Entities\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
     <Folder Include="Profiles\" />
     <Folder Include="Services\" />
     <Folder Include="Migrations\" />

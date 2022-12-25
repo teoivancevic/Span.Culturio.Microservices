@@ -1,5 +1,5 @@
 ﻿using System;
-using Span.Culturio.Microservices.Subscriptions.Models;
+using Span.Culturio.Microservices.Core.Models;
 
 namespace Span.Culturio.Microservices.Subscriptions.Services
 {

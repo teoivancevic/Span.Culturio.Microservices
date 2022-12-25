@@ -2,8 +2,8 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Span.Culturio.Auth.Data;
-using Span.Culturio.Auth.Helpers;
-using Span.Culturio.Auth.Models;
+using Span.Culturio.Microservices.Core.Helpers;
+using Span.Culturio.Microservices.Core.Models;
 
 namespace Span.Culturio.Auth.Services
 {

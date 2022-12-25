@@ -2,8 +2,8 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Span.Culturio.Microservices.Users.Data;
-using Span.Culturio.Microservices.Users.Helpers;
-using Span.Culturio.Microservices.Users.Models;
+using Span.Culturio.Microservices.Core.Helpers;
+using Span.Culturio.Microservices.Core.Models;
 
 namespace Span.Culturio.Microservices.Users.Services
 {

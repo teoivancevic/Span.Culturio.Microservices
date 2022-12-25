@@ -2,7 +2,7 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Span.Culturio.Microservices.Packages.Data;
-using Span.Culturio.Microservices.Packages.Models;
+using Span.Culturio.Microservices.Core.Models;
 
 namespace Span.Culturio.Microservices.Packages.Services
 {

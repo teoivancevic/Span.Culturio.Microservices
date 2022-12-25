@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Text;
-using Span.Culturio.Auth.Models;
+using Span.Culturio.Microservices.Core.Models;
 using Span.Culturio.Auth.Services;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
@@ -14,7 +14,7 @@ namespace Span.Culturio.Auth.Controllers
     public class AuthController : ControllerBase
     {
 
-        private readonly ILogger<AuthController> _logger;
+        private readonly ILogger _logger;
         private readonly IAuthService _authService;
         private readonly IConfiguration _configuration;
         //private readonly IAccountService _accountService;

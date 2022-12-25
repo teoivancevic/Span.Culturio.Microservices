@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
-using Span.Culturio.Microservices.Subscriptions.Models;
+using Span.Culturio.Microservices.Core.Models;
 using Span.Culturio.Microservices.Subscriptions.Services;
 
 namespace Span.Culturio.Microservices.Subscriptions.Controllers

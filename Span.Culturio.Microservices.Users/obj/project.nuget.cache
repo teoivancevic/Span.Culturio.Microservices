@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "qplG6PGRioC3UUvOtOUbJChXznADE1I1tujfi3WtnInBscfQkfMOJL6aWjbp3JxbvoB41tuhPFwtqP5hqZc6yA==",
+  "dgSpecHash": "fU2FnKiGFJVBi6VmssgCsOhXfKl6T/YKdn2/KoWG5/5LrxtY/zO+hSV8TXLr3cJp0eZzDPHWxfZhBxoIUGcY0Q==",
   "success": true,
   "projectFilePath": "/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Users/Span.Culturio.Microservices.Users.csproj",
   "expectedPackageFiles": [
     "/Users/teo/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
     "/Users/teo/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "/Users/teo/.nuget/packages/fluentvalidation/11.2.1/fluentvalidation.11.2.1.nupkg.sha512",
+    "/Users/teo/.nuget/packages/fluentvalidation.aspnetcore/11.2.2/fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "/Users/teo/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.2.1/fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "/Users/teo/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.10/microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.aspnetcore.headerpropagation/6.0.10/microsoft.aspnetcore.headerpropagation.6.0.10.nupkg.sha512",
