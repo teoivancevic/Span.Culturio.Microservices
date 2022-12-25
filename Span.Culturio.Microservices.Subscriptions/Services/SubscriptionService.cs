@@ -6,18 +6,26 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Span.Culturio.Microservices.Subscriptions.Data;
 using Span.Culturio.Microservices.Subscriptions.Models;
+using Microsoft.Net.Http.Headers;
+using Microsoft.Extensions.Configuration;
 
 namespace Span.Culturio.Microservices.Subscriptions.Services
 {
     public class SubscriptionService : ISubscriptionService
     {
 
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IConfiguration _configuration;
+
         private readonly DataContext _context;
         private readonly IMapper _mapper;
 
 
-        public SubscriptionService(DataContext context, IMapper mapper)
+        public SubscriptionService(IHttpClientFactory httpClientFactory, IConfiguration configuration, DataContext context, IMapper mapper)
         {
+            _httpClientFactory = httpClientFactory;
+            _configuration = configuration;
+
             _context = context;
             _mapper = mapper;
         }
@@ -49,7 +57,7 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
 
 
         //ovo je update za ovaj subscription
-        public async Task<SubscriptionDto> ActivateSubscription(ActivateSubscriptionDto activateSubscription)
+        public async Task<bool> ActivateSubscription(ActivateSubscriptionDto activateSubscription, string accessToken)
         {
             var subscription = await _context.Subscriptions.FindAsync(activateSubscription.SubscriptionId);
             if (subscription is not null && subscription.State != "active")
@@ -57,16 +65,43 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
                 //var package = await _context.Packages.FindAsync(subscription.PackageId);
 
                 //var package = new PackageDto();
-                int days = 1;
 
-                using (var client = new HttpClient())
+                //int days = -1;
+
+
+                var httpClient = _httpClientFactory.CreateClient("api");
+                httpClient.DefaultRequestHeaders.Add(HeaderNames.Authorization, accessToken); // token negdje trebam nac
+                var httpResponseMessage = await httpClient.GetAsync($"{_configuration["Endpoints:Packages"]}packages/{subscription.PackageId}/days");
+                if (httpResponseMessage.IsSuccessStatusCode)
                 {
-                    client.BaseAddress = new Uri("http://culturio-packages");
+                    var days = await httpResponseMessage.Content.ReadFromJsonAsync<int>();
+                    subscription.State = "active";
+                    subscription.ActiveFrom = DateTime.Now;
+                    //subscription.ActiveTo = subscription.ActiveFrom.AddDays(package.ValidDays); // uzima broj valid dana iz paketa na koji se subscribea
+
+                    subscription.ActiveTo = subscription.ActiveFrom.AddDays(days);
+
+                    _context.Subscriptions.Update(subscription);
+                    await _context.SaveChangesAsync();
+
+                    return true;
+
+                }
+
+                /*
+                using (var client = new HttpClient("api"))
+                {
+                    //client.BaseAddress = new Uri("http://culturio-packages");
+                    client.BaseAddress = new Uri("http://culturio-api/packages/packages/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    string? token = HttpContext.Session.GetString("Token");
+                    client.DefaultRequestHeaders.Add(HeaderNames.Authorization, $"bearer {token!}");
+
 
                     // HTTP GET
-                    string path = "api/packages/" + subscription.PackageId.ToString() + "/days";
+                    //string path = "api/packages/" + subscription.PackageId.ToString() + "/days";
+                    string path = subscription.PackageId.ToString() + "/days";
 
                     var response = client.GetAsync(path).Result;
                     if (response.IsSuccessStatusCode)
@@ -77,20 +112,30 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
 
                 }
 
-                subscription.State = "active";
-                subscription.ActiveFrom = DateTime.Now;
-                //subscription.ActiveTo = subscription.ActiveFrom.AddDays(package.ValidDays); // uzima broj valid dana iz paketa na koji se subscribea
+                if(days != -1)
+                {
+                    subscription.State = "active";
+                    subscription.ActiveFrom = DateTime.Now;
+                    //subscription.ActiveTo = subscription.ActiveFrom.AddDays(package.ValidDays); // uzima broj valid dana iz paketa na koji se subscribea
 
-                subscription.ActiveTo = subscription.ActiveFrom.AddDays(days);
+                    subscription.ActiveTo = subscription.ActiveFrom.AddDays(days);
 
-                _context.Subscriptions.Update(subscription);
-                await _context.SaveChangesAsync();
+                    _context.Subscriptions.Update(subscription);
+                    await _context.SaveChangesAsync();
+
+                    return true;
+                }
+                */
+
+                return false;
+
+                
 
             }
 
-            SubscriptionDto subscriptionDto = _mapper.Map<SubscriptionDto>(subscription);
+            //SubscriptionDto subscriptionDto = _mapper.Map<SubscriptionDto>(subscription);
 
-            return subscriptionDto;
+            return false;
         }
 
 
@@ -109,13 +154,13 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
                 int availableVisits = -1;
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://culturio-packages");
+                    client.BaseAddress = new Uri("http://culturio-api/packages/");
                     //client.BaseAddress = new Uri("http://localhost:5005");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                     // HTTP GET
-                    string path = "api/packages/available-visits/" + subscription.PackageId.ToString() + "/" + trackVisit.CultureObjectId.ToString();
+                    string path = "available-visits/" + subscription.PackageId.ToString() + "/" + trackVisit.CultureObjectId.ToString();
                     var response = client.GetAsync(path).Result;
                     if (response.IsSuccessStatusCode)
                     {

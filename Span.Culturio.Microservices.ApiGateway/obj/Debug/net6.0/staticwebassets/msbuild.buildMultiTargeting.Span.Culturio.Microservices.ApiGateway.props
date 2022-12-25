@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/Span.Culturio.Microservices.ApiGateway.props" />
-</Project>

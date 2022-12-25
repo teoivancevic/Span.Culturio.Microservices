@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Span.Culturio.Microservices.Core.Helpers;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace Span.Culturio.Microservices.Core
@@ -39,7 +41,36 @@ namespace Span.Culturio.Microservices.Core
 
                     };
                 });
+
+
+
+
         }
+
+
+        public static void RegisterSerilog(this WebApplicationBuilder builder)
+        {
+            //var logger = new LoggerConfiguration();
+
+            
+        }
+
+
+        public static void RegisterHeaderPropagation(this IServiceCollection services)
+        {
+            services.AddTransient<CorrelationIdHeaderHandler>();
+
+            services.AddHttpContextAccessor();
+            services.AddHeaderPropagation(options => options.Headers.Add("x-correlation-id"));
+            services.AddHttpClient("api")
+                .AddHeaderPropagation()
+                .AddHttpMessageHandler<CorrelationIdHeaderHandler>();
+
+
+            //dodati serilog correlation id neki nuget predavanje 8.2 23:20 timestamp
+        }
+
+
 	}
 }
 

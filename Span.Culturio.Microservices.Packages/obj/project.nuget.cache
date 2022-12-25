@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "R5Z6Zdzf24i+I7TCGOBCCBGdhqtZI9JyeQevbzT7Cuuf024QEuIk6nmPSXgX9AFvrfM/JUTPhiSG/eVjQA2aZQ==",
+  "dgSpecHash": "fzPexeUHJPvrSk2A59FNwiwy20L29Slxp/SR/uxpJHGCT4UJVhM9ON/EiX2nDBnoiros93AUBu3Rp1pci9B8Sw==",
   "success": true,
   "projectFilePath": "/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Packages/Span.Culturio.Microservices.Packages.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/teo/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/Users/teo/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.10/microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
+    "/Users/teo/.nuget/packages/microsoft.aspnetcore.headerpropagation/6.0.10/microsoft.aspnetcore.headerpropagation.6.0.10.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.data.sqlclient/2.1.4/microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.1.1/microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -26,6 +27,7 @@
     "/Users/teo/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.1/microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.extensions.dependencymodel/3.1.6/microsoft.extensions.dependencymodel.3.1.6.nupkg.sha512",
+    "/Users/teo/.nuget/packages/microsoft.extensions.http/6.0.0/microsoft.extensions.http.6.0.0.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "/Users/teo/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",

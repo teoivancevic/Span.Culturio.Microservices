@@ -20,12 +20,17 @@ builder.Services.AddDbContext<DataContext>(opt =>
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
+app.UseHeaderPropagation();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(settings =>
+    {
+        settings.EnableTryItOutByDefault();
+    });
 }
 
 app.UseHttpsRedirection();

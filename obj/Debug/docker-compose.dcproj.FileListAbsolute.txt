@@ -56,3 +56,17 @@
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.Auth.dll
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/System.Net.Http.Formatting.dll
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.Auth.pdb
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.ApiGateway.deps.json
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.ApiGateway.runtimeconfig.json
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/ocelot.json
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.ApiGateway
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.ApiGateway.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Ocelot.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Newtonsoft.Json.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Microsoft.Extensions.DiagnosticAdapter.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/FluentValidation.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Microsoft.AspNetCore.MiddlewareAnalysis.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Microsoft.AspNetCore.JsonPatch.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Newtonsoft.Json.Bson.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.ApiGateway.pdb

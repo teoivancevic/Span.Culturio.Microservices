@@ -80,3 +80,4 @@
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Users/bin/Debug/net6.0/System.Net.Http.Extensions.dll
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Users/bin/Debug/net6.0/System.Net.Http.Formatting.dll
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Users/bin/Debug/net6.0/System.Net.Http.Primitives.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Users/bin/Debug/net6.0/Microsoft.AspNetCore.HeaderPropagation.dll

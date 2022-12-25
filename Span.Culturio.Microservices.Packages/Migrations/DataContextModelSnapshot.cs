@@ -39,6 +39,20 @@ namespace Span.Culturio.Microservices.Packages.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Package", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Muzeji",
+                            ValidDays = 15
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Kino",
+                            ValidDays = 30
+                        });
                 });
 
             modelBuilder.Entity("Span.Culturio.Microservices.Packages.Data.Entities.PackageCultureObject", b =>
@@ -63,6 +77,29 @@ namespace Span.Culturio.Microservices.Packages.Migrations
                     b.HasIndex("PackageId");
 
                     b.ToTable("PackageCultureObject", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AvailableVisits = 3,
+                            CultureObjectId = 1,
+                            PackageId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AvailableVisits = 5,
+                            CultureObjectId = 2,
+                            PackageId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AvailableVisits = 2,
+                            CultureObjectId = 3,
+                            PackageId = 2
+                        });
                 });
 
             modelBuilder.Entity("Span.Culturio.Microservices.Packages.Data.Entities.PackageCultureObject", b =>

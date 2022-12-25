@@ -17,10 +17,11 @@ services:
       - "ASPNETCORE_URLS=http://+:80"
       - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Users;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
     ports:
-      - "5001:80"
+      - "5011:80"
     networks:
       - backend
-      - frontend
+    
+    
 
   culturio-users:
     image: culturio.users
@@ -32,10 +33,11 @@ services:
       - "ASPNETCORE_URLS=http://+:80"
       - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Users;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
     ports:
-      - "5002:80"
+      - "5012:80"
     networks:
       - backend
-      - frontend
+    
+    
 
 
   culturio-cultureobjects:
@@ -48,11 +50,11 @@ services:
       - "ASPNETCORE_URLS=http://+:80"
       - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.CultureObjects;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
     ports:
-      - "5003:80"
+      - "5013:80"
     networks:
       - backend
-      - frontend
-
+    
+    
   
 
 
@@ -65,12 +67,15 @@ services:
       - "ASPNETCORE_ENVIRONMENT=Development"
       - "ASPNETCORE_URLS=http://+:80"
       - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Subscriptions;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
-      - "Endpoints__Packages=http://culturio-packages/api/packages/"
+      #- "Endpoints__Packages=http://culturio-packages/api/packages/"
+      - "Endpoints__Packages=http://culturio-api/packages/" # ovo je VAZNO
+
     ports:
-      - "5004:80"
+      - "5014:80"
     networks:
       - backend
-      - frontend
+    
+    
 
 
   culturio-packages:
@@ -83,10 +88,12 @@ services:
       - "ASPNETCORE_URLS=http://+:80"
       - "ConnectionStrings__DefaultConnection=Server=host.docker.internal,1433;database=Culturio.Packages;uid=sa; pwd=mTxuojqygYV_Gdwv3;"
     ports:
-      - "5005:80"
+      - "5015:80"
     networks:
       - backend
-      - frontend
+    
+    
+
 
 #  seq:
 #   image: datalust/seq:latest
@@ -99,4 +106,31 @@ services:
 #    - frontend
 
 
+
+  culturio-api:
+    image: culturio.api
+    build:
+      context: .
+      dockerfile: Span.Culturio.ApiGateway/Dockerfile
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ASPNETCORE_URLS=http://+:80"
+      - "Endpoints__Users=http://culturio-users/api/users"
+      - "Endpoints__Subscriptions=http://culturio-subscriptions/api/subscriptions"
+      - "Endpoints__Auth=http://culturio-auth/api/auth/"
+      - "Endpoints__Packages=http://culturio-packages/api/packages/"
+      - "Endpoints__CultureObjects=http://culturio-cultureobjects/api/cultureobjects/"
+
+    ports:
+      - "5002:80"
+    networks:
+      - backend
+      - frontend
+    depends_on:
+      - culturio-users
+      - culturio-auth
+      - culturio-subscriptions
+      - culturio-packages
+      - culturio-cultureobjects
+    
 

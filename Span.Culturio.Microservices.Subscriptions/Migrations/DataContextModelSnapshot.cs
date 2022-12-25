@@ -56,6 +56,30 @@ namespace Span.Culturio.Microservices.Subscriptions.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Subscription", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ActiveFrom = new DateTime(2022, 12, 20, 23, 45, 49, 126, DateTimeKind.Local).AddTicks(9960),
+                            ActiveTo = new DateTime(2022, 12, 20, 23, 45, 49, 126, DateTimeKind.Local).AddTicks(9980),
+                            Name = "sub package 1",
+                            PackageId = 1,
+                            RecordedVisits = 0,
+                            State = "not active",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ActiveFrom = new DateTime(2022, 12, 20, 23, 45, 49, 126, DateTimeKind.Local).AddTicks(9990),
+                            ActiveTo = new DateTime(2022, 12, 20, 23, 45, 49, 126, DateTimeKind.Local).AddTicks(9990),
+                            Name = "sub package 2",
+                            PackageId = 2,
+                            RecordedVisits = 0,
+                            State = "not active",
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("Span.Culturio.Microservices.Subscriptions.Data.Entities.TrackVisit", b =>

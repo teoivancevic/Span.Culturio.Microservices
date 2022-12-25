@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 using Span.Culturio.Microservices.Subscriptions.Models;
 using Span.Culturio.Microservices.Subscriptions.Services;
 
@@ -47,8 +48,9 @@ namespace Span.Culturio.Microservices.Subscriptions.Controllers
         [HttpPost("activate")]
         public async Task<ActionResult> ActivateSubscription([FromBody] ActivateSubscriptionDto subscription)
         {
-            var subscriptionDto = await _subscriptionService.ActivateSubscription(subscription);
-            if (subscriptionDto is null)
+            var accessToken = Request.Headers[HeaderNames.Authorization];
+            var result = await _subscriptionService.ActivateSubscription(subscription, accessToken);
+            if (!result)
             {
                 return BadRequest("Could not activate subscription.");
             }

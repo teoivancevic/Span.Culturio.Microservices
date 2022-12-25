@@ -19,6 +19,7 @@
     <None Remove="Data\" />
     <None Remove="Data\Entities\" />
     <None Remove="Profiles\" />
+    <None Remove="Microsoft.AspNetCore.Session" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
