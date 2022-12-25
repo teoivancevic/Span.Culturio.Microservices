@@ -64,8 +64,9 @@ namespace Span.Culturio.Microservices.Subscriptions.Controllers
         [HttpPost("track-visit")]
         public async Task<ActionResult> TrackVisit([FromBody] CreateTrackVisitDto trackVisit)
         {
+            var accessToken = Request.Headers[HeaderNames.Authorization];
 
-            var result = await _subscriptionService.TrackVisit(trackVisit);
+            var result = await _subscriptionService.TrackVisit(trackVisit, accessToken);
             if (!result)
             {
                 return BadRequest("Invalid request. Subscription already used up all visits to this culture object.\n(also check if input is correct and if subscription is active)");

@@ -8,7 +8,7 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
         public Task<IEnumerable<SubscriptionDto>> GetSubscriptions(int id);
 
         public Task<SubscriptionDto> CreateSubscription(CreateSubscriptionDto subscription);
-        public Task<bool> TrackVisit(CreateTrackVisitDto trackVisit);
+        public Task<bool> TrackVisit(CreateTrackVisitDto trackVisit, string accessToken);
         public Task<bool> ActivateSubscription(ActivateSubscriptionDto activateSubscription, string accessToken);
     }
 }

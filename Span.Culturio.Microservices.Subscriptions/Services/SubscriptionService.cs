@@ -62,22 +62,16 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
             var subscription = await _context.Subscriptions.FindAsync(activateSubscription.SubscriptionId);
             if (subscription is not null && subscription.State != "active")
             {
-                //var package = await _context.Packages.FindAsync(subscription.PackageId);
-
-                //var package = new PackageDto();
-
-                //int days = -1;
-
+                
 
                 var httpClient = _httpClientFactory.CreateClient("api");
-                httpClient.DefaultRequestHeaders.Add(HeaderNames.Authorization, accessToken); // token negdje trebam nac
+                httpClient.DefaultRequestHeaders.Add(HeaderNames.Authorization, accessToken);
                 var httpResponseMessage = await httpClient.GetAsync($"{_configuration["Endpoints:Packages"]}packages/{subscription.PackageId}/days");
                 if (httpResponseMessage.IsSuccessStatusCode)
                 {
                     var days = await httpResponseMessage.Content.ReadFromJsonAsync<int>();
                     subscription.State = "active";
                     subscription.ActiveFrom = DateTime.Now;
-                    //subscription.ActiveTo = subscription.ActiveFrom.AddDays(package.ValidDays); // uzima broj valid dana iz paketa na koji se subscribea
 
                     subscription.ActiveTo = subscription.ActiveFrom.AddDays(days);
 
@@ -88,44 +82,7 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
 
                 }
 
-                /*
-                using (var client = new HttpClient("api"))
-                {
-                    //client.BaseAddress = new Uri("http://culturio-packages");
-                    client.BaseAddress = new Uri("http://culturio-api/packages/packages/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    string? token = HttpContext.Session.GetString("Token");
-                    client.DefaultRequestHeaders.Add(HeaderNames.Authorization, $"bearer {token!}");
-
-
-                    // HTTP GET
-                    //string path = "api/packages/" + subscription.PackageId.ToString() + "/days";
-                    string path = subscription.PackageId.ToString() + "/days";
-
-                    var response = client.GetAsync(path).Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        days = response.Content.ReadAsAsync<int>().Result;
-
-                    }
-
-                }
-
-                if(days != -1)
-                {
-                    subscription.State = "active";
-                    subscription.ActiveFrom = DateTime.Now;
-                    //subscription.ActiveTo = subscription.ActiveFrom.AddDays(package.ValidDays); // uzima broj valid dana iz paketa na koji se subscribea
-
-                    subscription.ActiveTo = subscription.ActiveFrom.AddDays(days);
-
-                    _context.Subscriptions.Update(subscription);
-                    await _context.SaveChangesAsync();
-
-                    return true;
-                }
-                */
+                
 
                 return false;
 
@@ -133,7 +90,6 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
 
             }
 
-            //SubscriptionDto subscriptionDto = _mapper.Map<SubscriptionDto>(subscription);
 
             return false;
         }
@@ -141,10 +97,57 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
 
 
 
-        public async Task<bool> TrackVisit(CreateTrackVisitDto trackVisit)
+        public async Task<bool> TrackVisit(CreateTrackVisitDto trackVisit, string accessToken)
         {
 
             var subscription = await _context.Subscriptions.FindAsync(trackVisit.SubscriptionId);
+
+            if (subscription is not null && subscription.ActiveTo >= DateTime.Now && subscription.State == "active")
+            {
+
+
+                var httpClient = _httpClientFactory.CreateClient("api");
+                httpClient.DefaultRequestHeaders.Add(HeaderNames.Authorization, accessToken);
+                var httpResponseMessage = await httpClient.GetAsync($"{_configuration["Endpoints:Packages"]}packages/available-visits/{subscription.PackageId}/{trackVisit.CultureObjectId}");
+                if (httpResponseMessage.IsSuccessStatusCode)
+                {
+                    int availableVisits = httpResponseMessage.Content.ReadAsAsync<int>().Result;
+
+                    int timesVisited = _context.TrackVisits.Count(x => x.SubscriptionId == trackVisit.SubscriptionId && x.CultureObjectId == trackVisit.CultureObjectId);
+
+
+                    if (timesVisited < availableVisits)
+                    {
+                        var trackVisitEntity = _mapper.Map<Data.Entities.TrackVisit>(trackVisit);
+                        trackVisitEntity.TimeEntered = DateTime.Now;
+
+                        _context.TrackVisits.Add(trackVisitEntity);
+                        await _context.SaveChangesAsync();
+
+                        return true;
+
+                    }
+
+
+
+
+                    return false;
+
+                }
+
+                
+
+                return false;
+
+
+
+            }
+
+            return false;
+
+            /*
+
+            ///// STARA VERZIJA KOJA NE RADI VVV
             if (subscription is not null && subscription.ActiveTo >= DateTime.Now && subscription.State == "active")
             {
 
@@ -194,6 +197,8 @@ namespace Span.Culturio.Microservices.Subscriptions.Services
             }
 
             return false;
+
+            */
 
 
         }
