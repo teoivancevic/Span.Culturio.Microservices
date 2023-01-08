@@ -157,3 +157,16 @@
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/obj/Debug/net6.0/Span.Culturio.Auth.csproj.CopyComplete
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/obj/Debug/net6.0/Span.Culturio.Auth.genruntimeconfig.cache
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/obj/Debug/net6.0/ref/Span.Culturio.Auth.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/FluentValidation.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/FluentValidation.AspNetCore.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Microsoft.AspNetCore.HeaderPropagation.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.AspNetCore.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.Extensions.Hosting.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.Extensions.Logging.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.Formatting.Compact.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.Settings.Configuration.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.Sinks.Console.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.Sinks.Debug.dll
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/bin/Debug/net6.0/Serilog.Sinks.File.dll

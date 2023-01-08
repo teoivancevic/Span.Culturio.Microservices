@@ -14,7 +14,7 @@ namespace Span.Culturio.Auth.Controllers
     public class AuthController : ControllerBase
     {
 
-        private readonly ILogger _logger;
+        private readonly ILogger<AuthController> _logger;
         private readonly IAuthService _authService;
         private readonly IConfiguration _configuration;
         //private readonly IAccountService _accountService;
@@ -32,6 +32,7 @@ namespace Span.Culturio.Auth.Controllers
         {
             //nezz kako treba ovo napravit, dal treba bit registerUserDto kojeg mapiram u setrvisu ili da samo svugdje koristim UserDto
             //var user = _userService.GetUser()
+            _logger.LogInformation("Register user method called.");
             await _authService.CreateUser(user);
             return Ok(user);
         }

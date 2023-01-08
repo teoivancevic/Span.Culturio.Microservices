@@ -13,7 +13,7 @@ namespace Span.Culturio.Microservices.Subscriptions.Controllers
 
     public class SubscriptionsController : ControllerBase
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<SubscriptionsController> _logger;
         private readonly ISubscriptionService _subscriptionService;
         private readonly IConfiguration _configuration;
 
@@ -27,6 +27,8 @@ namespace Span.Culturio.Microservices.Subscriptions.Controllers
         [HttpGet]
         public async Task<ActionResult<List<SubscriptionDto>>> GetSubscriptions(int userId)
         {
+            _logger.LogInformation("Get subscriptions method called.");
+
             var subscriptions = await _subscriptionService.GetSubscriptions(userId);
 
             return Ok(subscriptions);

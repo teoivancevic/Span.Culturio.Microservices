@@ -12,7 +12,7 @@ namespace Span.Culturio.Microservices.CultureObjects.Controllers
 
     public class CultureObjectsController : ControllerBase
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<CultureObjectsController> _logger;
         private readonly ICultureObjectService _cultureObjectService;
         private readonly IConfiguration _configuration;
 
@@ -27,6 +27,7 @@ namespace Span.Culturio.Microservices.CultureObjects.Controllers
         [HttpGet]
         public async Task<ActionResult<List<CultureObjectDto>>> GetCultureObjects()
         {
+            _logger.LogInformation("Get culture objects method called.");
             var cultureObjects = await _cultureObjectService.GetCultureObjects();
             return Ok(cultureObjects);
         }

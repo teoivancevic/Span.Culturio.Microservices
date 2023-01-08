@@ -14,6 +14,7 @@
           "Port": 80
         }
       ]
+      //"SwaggerKey": "users"
     },
     // auth
     {
@@ -29,6 +30,7 @@
           "Port": 80
         }
       ]
+      //"SwaggerKey": "auth"
     },
     // subscriptions
     {
@@ -44,6 +46,7 @@
           "Port": 80
         }
       ]
+      //"SwaggerKey": "subscriptions"
     },
     // packages
     {
@@ -59,6 +62,7 @@
           "Port": 80
         }
       ]
+      //"SwaggerKey": "packages"
     },
     // cultureobjects
     {
@@ -74,9 +78,11 @@
           "Port": 80
         }
       ]
+      //"SwaggerKey": "cultureobjects"
     }
   ],
+
   "GlobalConfiguration": {
-    "BaseUrl":  "http://localhost:5002"
+    "BaseUrl": "http://localhost:5002"
   }
 }

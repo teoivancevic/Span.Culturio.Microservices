@@ -92,20 +92,7 @@ services:
     networks:
       - backend
     
-    
-
-
-#  seq:
-#   image: datalust/seq:latest
-#   environment:
-#    - ACCEPT_EULA=y
-#   ports:
-#    - "5341:80"
-#   networks:
-#    - backend
-#    - frontend
-
-
+ 
 
   culturio-api:
     image: culturio.api
@@ -132,5 +119,16 @@ services:
       - culturio-subscriptions
       - culturio-packages
       - culturio-cultureobjects
+
+
+  seq:
+    image: datalust/seq:latest
+    environment:
+      - ACCEPT_EULA=y
+    ports:
+      - "5341:80"
+    networks:
+      - backend
+      - frontend
     
 

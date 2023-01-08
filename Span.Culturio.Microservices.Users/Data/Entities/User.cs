@@ -12,9 +12,13 @@ namespace Span.Culturio.Microservices.Users.Data.Entities
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
+        public int RoleId { get; set; }
 
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+
+        public virtual Role Role { get; set; }
+
     }
 
     public class UserConfigurationBuilder : IEntityTypeConfiguration<User>
@@ -36,11 +40,17 @@ namespace Span.Culturio.Microservices.Users.Data.Entities
             builder.Property(x => x.PasswordSalt)
                 .IsRequired();
 
+            builder.HasOne(x => x.Role)
+                .WithMany(r => r.Users)
+                .HasForeignKey(x => x.RoleId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             // Seed data
             UserHelper.CreatePasswordHash("Str0ngP@$$w0rd12$%#", out byte[] passwordHash, out byte[] passwordSalt);
             builder.HasData(new User
             {
                 Id = 1,
+                RoleId = 1,
                 FirstName = "Admin",
                 LastName = "User",
                 Email = "admin@culturio.eu",

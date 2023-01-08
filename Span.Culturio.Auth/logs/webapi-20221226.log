@@ -1,0 +1,57 @@
+[2022-12-26 12:05:36.963 +01:00  INF  User profile is available. Using '/Users/teo/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+][2022-12-26 12:05:37.208 +01:00  INF  Now listening on: https://localhost:7156
+][2022-12-26 12:05:37.209 +01:00  INF  Now listening on: http://localhost:5005
+][2022-12-26 12:05:37.210 +01:00  INF  Application started. Press Ctrl+C to shut down.
+][2022-12-26 12:05:37.210 +01:00  INF  Hosting environment: Development
+][2022-12-26 12:05:37.210 +01:00  INF  Content root path: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/
+][2022-12-26 12:05:38.345 +01:00  INF  Request starting HTTP/1.1 GET https://localhost:7156/swagger/index.html - -
+][2022-12-26 12:05:38.402 +01:00  INF  Request finished HTTP/1.1 GET https://localhost:7156/swagger/index.html - - - 200 - text/html;charset=utf-8 58.9251ms
+][2022-12-26 12:05:38.773 +01:00  INF  Request starting HTTP/1.1 GET https://localhost:7156/swagger/v1/swagger.json - -
+][2022-12-26 12:05:38.855 +01:00  INF  Request finished HTTP/1.1 GET https://localhost:7156/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 82.6359ms
+][2022-12-26 12:05:42.294 +01:00  INF  Request starting HTTP/1.1 POST https://localhost:7156/api/Auth/register application/json 130
+][2022-12-26 12:05:42.383 +01:00  INF  Executing endpoint 'Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth)'
+][2022-12-26 12:05:42.402 +01:00  INF  Route matched with {action = "RegisterUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Span.Culturio.Microservices.Core.Models.UserDto]] RegisterUser(Span.Culturio.Microservices.Core.Models.RegisterUserDto) on controller Span.Culturio.Auth.Controllers.AuthController (Span.Culturio.Auth).
+][2022-12-26 12:05:42.594 +01:00  INF  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+][2022-12-26 12:05:42.598 +01:00  INF  Executed action Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth) in 193.337ms
+][2022-12-26 12:05:42.600 +01:00  INF  Executed endpoint 'Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth)'
+][2022-12-26 12:05:42.602 +01:00  INF  Request finished HTTP/1.1 POST https://localhost:7156/api/Auth/register application/json 130 - 400 - application/problem+json;+charset=utf-8 308.3675ms
+][2022-12-26 12:06:21.793 +01:00  INF  Request starting HTTP/1.1 POST https://localhost:7156/api/Auth/login application/json 40
+][2022-12-26 12:06:21.803 +01:00  INF  Executing endpoint 'Span.Culturio.Auth.Controllers.AuthController.Login (Span.Culturio.Auth)'
+][2022-12-26 12:06:21.812 +01:00  INF  Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] Login(Span.Culturio.Microservices.Core.Models.LoginDto) on controller Span.Culturio.Auth.Controllers.AuthController (Span.Culturio.Auth).
+][2022-12-26 12:06:21.832 +01:00  INF  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+][2022-12-26 12:06:21.833 +01:00  INF  Executed action Span.Culturio.Auth.Controllers.AuthController.Login (Span.Culturio.Auth) in 20.2007ms
+][2022-12-26 12:06:21.833 +01:00  INF  Executed endpoint 'Span.Culturio.Auth.Controllers.AuthController.Login (Span.Culturio.Auth)'
+][2022-12-26 12:06:21.833 +01:00  INF  Request finished HTTP/1.1 POST https://localhost:7156/api/Auth/login application/json 40 - 400 - application/problem+json;+charset=utf-8 40.0675ms
+][2022-12-26 12:09:41.723 +01:00  INF]  User profile is available. Using '/Users/teo/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+[2022-12-26 12:09:41.944 +01:00  INF]  Now listening on: https://localhost:7156
+[2022-12-26 12:09:41.967 +01:00  INF]  Now listening on: http://localhost:5005
+[2022-12-26 12:09:41.969 +01:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-12-26 12:09:41.969 +01:00  INF]  Hosting environment: Development
+[2022-12-26 12:09:41.969 +01:00  INF]  Content root path: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth/
+[2022-12-26 12:09:43.005 +01:00  INF]  Request starting HTTP/1.1 GET https://localhost:7156/swagger/index.html - -
+[2022-12-26 12:09:43.056 +01:00  INF]  Request finished HTTP/1.1 GET https://localhost:7156/swagger/index.html - - - 200 - text/html;charset=utf-8 52.1783ms
+[2022-12-26 12:09:43.131 +01:00  INF]  Request starting HTTP/1.1 GET https://localhost:7156/swagger/v1/swagger.json - -
+[2022-12-26 12:09:43.291 +01:00  INF]  Request finished HTTP/1.1 GET https://localhost:7156/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 160.5707ms
+[2022-12-26 12:10:21.192 +01:00  INF]  Request starting HTTP/1.1 POST https://localhost:7156/api/Auth/register application/json 137
+[2022-12-26 12:10:21.292 +01:00  INF]  Executing endpoint 'Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth)'
+[2022-12-26 12:10:21.313 +01:00  INF]  Route matched with {action = "RegisterUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Span.Culturio.Microservices.Core.Models.UserDto]] RegisterUser(Span.Culturio.Microservices.Core.Models.RegisterUserDto) on controller Span.Culturio.Auth.Controllers.AuthController (Span.Culturio.Auth).
+[2022-12-26 12:10:21.501 +01:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-12-26 12:10:21.504 +01:00  INF]  Executed action Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth) in 189.0672ms
+[2022-12-26 12:10:21.506 +01:00  INF]  Executed endpoint 'Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth)'
+[2022-12-26 12:10:21.508 +01:00  INF]  Request finished HTTP/1.1 POST https://localhost:7156/api/Auth/register application/json 137 - 400 - application/problem+json;+charset=utf-8 317.3231ms
+[2022-12-26 12:10:28.922 +01:00  INF]  Request starting HTTP/1.1 POST https://localhost:7156/api/Auth/register application/json 139
+[2022-12-26 12:10:28.926 +01:00  INF]  Executing endpoint 'Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth)'
+[2022-12-26 12:10:28.926 +01:00  INF]  Route matched with {action = "RegisterUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Span.Culturio.Microservices.Core.Models.UserDto]] RegisterUser(Span.Culturio.Microservices.Core.Models.RegisterUserDto) on controller Span.Culturio.Auth.Controllers.AuthController (Span.Culturio.Auth).
+[2022-12-26 12:10:28.942 +01:00  INF]  Register user method called.
+[2022-12-26 12:10:29.354 +01:00  INF]  Entity Framework Core 6.0.10 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
+[2022-12-26 12:10:29.826 +01:00  INF]  Executed DbCommand (61ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 8000) (DbType = Binary), @p4='?' (Size = 8000) (DbType = Binary), @p5='?' (DbType = Int32), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [User] ([Email], [FirstName], [LastName], [PasswordHash], [PasswordSalt], [RoleId], [Username])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [User]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+[2022-12-26 12:10:29.884 +01:00  INF]  Executing OkObjectResult, writing value of type 'Span.Culturio.Microservices.Core.Models.RegisterUserDto'.
+[2022-12-26 12:10:29.886 +01:00  INF]  Executed action Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth) in 959.5772ms
+[2022-12-26 12:10:29.886 +01:00  INF]  Executed endpoint 'Span.Culturio.Auth.Controllers.AuthController.RegisterUser (Span.Culturio.Auth)'
+[2022-12-26 12:10:29.890 +01:00  INF]  Request finished HTTP/1.1 POST https://localhost:7156/api/Auth/register application/json 139 - 200 - application/json;+charset=utf-8 967.5490ms

@@ -13,7 +13,7 @@ namespace Span.Culturio.Microservices.Packages.Controllers
     public class PackagesController : ControllerBase
     {
 
-        private readonly ILogger _logger;
+        private readonly ILogger<PackagesController> _logger;
         private readonly IPackageService _packageService;
         private readonly IConfiguration _configuration;
 
@@ -27,6 +27,8 @@ namespace Span.Culturio.Microservices.Packages.Controllers
         [HttpGet]
         public async Task<ActionResult<List<PackageDto>>> GetPackages()
         {
+            _logger.LogInformation("Get packages method called.");
+
             var packages = await _packageService.GetPackages();
             return Ok(packages);
         }

@@ -2,8 +2,13 @@
 using Span.Culturio.Microservices.Core;
 using Span.Culturio.Microservices.CultureObjects.Data;
 using Span.Culturio.Microservices.CultureObjects.Services;
+using Serilog;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.RegisterSerilog();
+
 
 // Add services to the container.
 
@@ -19,6 +24,8 @@ builder.Services.AddDbContext<DataContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+
 
 builder.Services.AddScoped<ICultureObjectService, CultureObjectService>();
 

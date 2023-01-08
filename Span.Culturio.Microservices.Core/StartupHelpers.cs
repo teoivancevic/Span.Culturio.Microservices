@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Text;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Span.Culturio.Microservices.Core.Helpers;
 using Swashbuckle.AspNetCore.Filters;
+using Span.Culturio.Microservices.Core.Models;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Span.Culturio.Microservices.Core
 {
@@ -29,6 +34,9 @@ namespace Span.Culturio.Microservices.Core
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            services.AddFluentValidationAutoValidation();
+            services.AddValidatorsFromAssemblyContaining<UserValidator>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -51,8 +59,17 @@ namespace Span.Culturio.Microservices.Core
         public static void RegisterSerilog(this WebApplicationBuilder builder)
         {
             //var logger = new LoggerConfiguration();
+            //logging
+            var logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(builder.Configuration)
+                .Enrich.FromLogContext()
+                .Enrich.WithCorrelationIdHeader()
+                .CreateLogger();
 
-            
+            builder.Logging.ClearProviders();
+            builder.Logging.AddSerilog(logger);
+
+
         }
 
 

@@ -1,0 +1,371 @@
+name: dockercompose17091314513400019701
+services:
+  culturio-api:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.ApiGateway/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Span.Culturio.ApiGateway
+      target: base
+    container_name: Span.Culturio.ApiGateway
+    depends_on:
+      culturio-auth:
+        condition: service_started
+      culturio-cultureobjects:
+        condition: service_started
+      culturio-packages:
+        condition: service_started
+      culturio-subscriptions:
+        condition: service_started
+      culturio-users:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      Endpoints__Auth: http://culturio-auth/api/auth/
+      Endpoints__CultureObjects: http://culturio-cultureobjects/api/cultureobjects/
+      Endpoints__Packages: http://culturio-packages/api/packages/
+      Endpoints__Subscriptions: http://culturio-subscriptions/api/subscriptions
+      Endpoints__Users: http://culturio-users/api/users
+      NUGET_FALLBACK_PACKAGES: ""
+    image: culturio.api:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Span.Culturio.ApiGateway.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5002"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.ApiGateway
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+  culturio-auth:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Auth/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Span.Culturio.Auth
+      target: base
+    container_name: Span.Culturio.Auth
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Users;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: culturio.auth:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Span.Culturio.Auth.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5011"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Auth
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+  culturio-cultureobjects:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.CultureObjects/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Span.Culturio.Microservices.CultureObjects
+      target: base
+    container_name: Span.Culturio.Microservices.CultureObjects
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.CultureObjects;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: culturio.cultureobjects:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Span.Culturio.Microservices.CultureObjects.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5013"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.CultureObjects
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+  culturio-packages:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.Packages/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Span.Culturio.Microservices.Packages
+      target: base
+    container_name: Span.Culturio.Microservices.Packages
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Packages;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: culturio.packages:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Span.Culturio.Microservices.Packages.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5015"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Packages
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+  culturio-subscriptions:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.Subscriptions/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Span.Culturio.Microservices.Subscriptions
+      target: base
+    container_name: Span.Culturio.Microservices.Subscriptions
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Subscriptions;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      Endpoints__Packages: http://culturio-api/packages/
+      NUGET_FALLBACK_PACKAGES: ""
+    image: culturio.subscriptions:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Span.Culturio.Microservices.Subscriptions.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5014"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Subscriptions
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+  culturio-users:
+    build:
+      context: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      dockerfile: Span.Culturio.Microservices.Users/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Span.Culturio.Microservices.Users
+      target: base
+    container_name: Span.Culturio.Microservices.Users
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: Server=host.docker.internal,1433;database=Culturio.Users;uid=sa;
+        pwd=mTxuojqygYV_Gdwv3;
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: culturio.users:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Span.Culturio.Microservices.Users.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5012"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.Microservices.Users
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/vsdbg/vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/teo/.nuget/packages/
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  backend:
+    name: dockercompose17091314513400019701_backend
+  frontend:
+    name: dockercompose17091314513400019701_frontend

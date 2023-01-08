@@ -13,7 +13,7 @@ namespace Span.Culturio.Microservices.Users.Controllers
     public class UsersController : ControllerBase
     {
 
-        private readonly ILogger _logger;
+        private readonly ILogger<UsersController> _logger;
         private readonly IUserService _userService;
         private readonly IConfiguration _configuration;
 
@@ -27,6 +27,8 @@ namespace Span.Culturio.Microservices.Users.Controllers
         [HttpGet]
         public async Task<ActionResult<List<UserDto>>> GetUsers([FromQuery] int pageSize, [FromQuery] int pageIndex)
         {
+            _logger.LogInformation("Get users method called.");
+
             var users = await _userService.GetUsers();
             return Ok(users);
         }

@@ -134,13 +134,17 @@
               "target": "Package",
               "version": "[11.2.2, )"
             },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.4.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.10, )"
             },
             "Microsoft.AspNetCore.HeaderPropagation": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -173,6 +177,18 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog.Enrichers.CorrelationId": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.2.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

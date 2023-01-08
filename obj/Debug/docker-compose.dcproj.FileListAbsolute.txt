@@ -70,3 +70,4 @@
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Microsoft.AspNetCore.JsonPatch.dll
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Newtonsoft.Json.Bson.dll
 /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Span.Culturio.ApiGateway.pdb
+/Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/bin/Debug/Microsoft.AspNetCore.HeaderPropagation.dll

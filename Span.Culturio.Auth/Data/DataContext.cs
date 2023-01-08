@@ -14,7 +14,8 @@ namespace Span.Culturio.Auth.Data
         }
 
         public DbSet<User> Users { get; set; }
-        //public DbSet<Subscription> Subscriptions { get; set; }
+        //public DbSet<Role> Roles { get; set; }
+            //public DbSet<Subscription> Subscriptions { get; set; }
         //public DbSet<Package> Packages { get; set; }
         //public DbSet<PackageCultureObject> PackageCultureObjects { get; set; }
         //public DbSet<CultureObject> CultureObjects { get; set; }

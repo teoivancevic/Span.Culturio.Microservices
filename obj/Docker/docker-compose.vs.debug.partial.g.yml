@@ -1,6 +1,31 @@
 version: '3.4'
 
 services:
+  culturio-api:
+    image: culturio.api:dev
+    container_name: Span.Culturio.ApiGateway
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Span.Culturio.ApiGateway"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices/Span.Culturio.ApiGateway:/app
+      - /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices:/src
+      - /Users/teo/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/teo/.nuget/packages/:/root/.nuget/packages:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/Span.Culturio.ApiGateway.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
   culturio-auth:
     image: culturio.auth:dev
     container_name: Span.Culturio.Auth
@@ -26,6 +51,7 @@ services:
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
+
   culturio-cultureobjects:
     image: culturio.cultureobjects:dev
     container_name: Span.Culturio.Microservices.CultureObjects
@@ -126,32 +152,6 @@ services:
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
       com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/Span.Culturio.Microservices.Users.dll\""
-      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
-      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
-    tty: true
-
-  span.culturio.apigateway:
-    image: culturio.apigateway:dev
-    container_name: Span.Culturio.ApiGateway
-    build:
-      target: base
-      labels:
-        com.microsoft.created-by: "visual-studio"
-        com.microsoft.visual-studio.project-name: "Span.Culturio.ApiGateway"
-    environment:
-      - DOTNET_USE_POLLING_FILE_WATCHER=1
-      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
-      - NUGET_FALLBACK_PACKAGES=
-    volumes:
-      - /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.ApiGateway:/app
-      - /Users/teo/Documents/FER/1. semestar/mikroservisi/Span.Culturio.Microservices:/src
-      - /Users/teo/vsdbg/vs2017u5:/remote_debugger:rw
-      - /Users/teo/.nuget/packages/:/root/.nuget/packages:ro
-
-    entrypoint: tail -f /dev/null
-    labels:
-      com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/Span.Culturio.ApiGateway.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

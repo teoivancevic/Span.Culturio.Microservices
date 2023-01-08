@@ -2,8 +2,13 @@
 using Span.Culturio.Microservices.Core;
 using Span.Culturio.Microservices.Users.Data;
 using Span.Culturio.Microservices.Users.Services;
+using Serilog;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.RegisterSerilog();
+
 
 // Add services to the container.
 
